@@ -30,7 +30,7 @@ export function createContainer<Value, State = void>(
 
 	function useContainer(): Value {
 		let value = React.useContext(Context)
-			if (!value && isDev) {
+		if (!value && isDev) {
 			value = React.__containerCache[useHook.name];
 		}
 		if (value === EMPTY) {
