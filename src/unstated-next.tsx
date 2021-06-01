@@ -30,9 +30,9 @@ export function createContainer<Value, State = void>(
 
 	function useContainer(): Value {
 		let value = React.useContext(Context)
-		    if (!value && isDev) {
-		      value = React.__containerCache[useHook.name];
-		    }
+			if (!value && isDev) {
+			value = React.__containerCache[useHook.name];
+		}
 		if (value === EMPTY) {
 			throw new Error("Component must be wrapped with <Container.Provider>")
 		}
